@@ -1,0 +1,264 @@
+#. login root
+gedit /etc/pam.d/gdm-autologin 
+gedit /etc/pam.d/gdm-password
+gedit /etc/gdm3/custom.conf
+
+gedit /etc/ssh/sshd_config
+PermitRootLogin yes
+
+gedit /root/.profile 
+tty -s && mesg n || true
+
+
+#. install software
+
+export http_proxy=http://proxy.tencent.com:8080
+export https_proxy=https://proxy.tencent.com:8080
+git config --global http.proxy http://proxy.tencent.com:8080
+git config --global https.proxy https://proxy.tencent.com:8080
+
+apt purge -y libreoffice* openjdk* vim* && apt update
+apt install -y unrar zip unzip p7zip composer rsync git openssh-server python-pip flex bison perl m4 automake gettext gperf dejagnu expect tcl autogen texinfo curl
+apt install -y zlib1g zlib1g-dev python-dev python2.7-dev python3-dev gawk binutils cmake make ruby-pygments.rb ruby-redcarpet libncurses5-dev ruby cscope exuberant-ctags libunwind8 libprotobuf-dev
+apt install -y protobuf-compiler ack libc-ares-dev autoconf libtool subversion fcitx fcitx-googlepinyin libboost-dev golang curl openssh-server nodejs npm python3-setuptools libtiff-dev
+apt install -y libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev libxine2-dev libv4l-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk2.0-dev libtbb-dev qt5-default
+apt install -y libatlas-base-dev libfaac-dev libmp3lame-dev libtheora-dev libvorbis-dev libxvidcore-dev libopencore-amrnb-dev libopencore-amrwb-dev libavresample-dev python3-dev python3-numpy 
+apt install -y x264 v4l-utils x265 libprotobuf-dev protobuf-compiler libgoogle-glog-dev libgflags-dev libgphoto2-dev libeigen3-dev libhdf5-dev doxygen python3-pip
+apt install -y libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev
+apt install -y libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev libv4l-dev v4l-utils
+apt install -y libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
+apt install -y gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools  ubuntu-restricted-extras
+apt install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools
+apt install -y libglew-dev libcanberra-gtk-module libv4l-dev v4l-utils libtbb2 libtbb-dev
+apt install -y build-essential cmake unzip pkg-config libjpeg-dev libpng-dev libtiff-dev
+apt install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libx265-dev libgtk-3-dev
+apt install -y libatlas-base-dev gfortran build-essential checkinstall cmake pkg-config yasm git gfortran libjpeg8-dev libpng-dev software-properties-common libjasper1
+apt install -y libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev
+apt install -y libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev libv4l-dev v4l-utils
+apt install -y libjpeg-dev libpng-dev libtiff-dev ffmpeg  libjpeg8-dev libtiff5-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+
+apt install -y libxvidcore-dev libx264-dev libvorbis-dev libgtk2.0-dev libgtk-3-dev ccache imagemagick liblept5 leptonica-progs libleptonica-dev
+apt install -y qt5-default libgtk2.0-dev libtbb-dev libatlas-base-dev gfortran libblas-dev liblapack-dev 
+apt install -y libdvd-pkg libgstreamer-plugins-base1.0-dev libmp3lame-dev libtheora-dev libxine2-dev libv4l-dev x264 v4l-utils
+apt install -y libopencore-amrnb-dev libopencore-amrwb-dev libblas-dev liblapacke-dev liblapack-doc  libgtkglext1-dev
+apt install -y libxt-dev libglew-dev libsuitesparse-dev tk8.5 tcl8.5 tcl8.5-dev tcl-dev spawn-fcgi net-tools  libssl-dev libgmp3-dev libmpfr-dev libmpfr-doc libmpfr4
+apt install -y cmake libgoogle-glog-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev libusb-1.0-0-dev libusb-dev libudev-dev mpi-default-dev openmpi-bin openmpi-common libboost-all-dev libpcap-dev  
+apt install -y libqhull* libgtest-dev freeglut3-dev pkg-config libxmu-dev libxi-dev mono-complete libvtk7-jni libvtk7-java libvtk7-dev libvtk7-qt-dev libqt5x11extras5-dev
+apt install -y libboost-all-dev  asciidoc python-dev python3-dev ruby-dev liblua5.3-dev libperl-dev libncurses5-dev libx11-dev libgnome2-dev libgnomeui-dev libxt-dev libgtk2.0-dev
+apt install -y llvm clang libc++-dev libc++abi-dev libncurses5-dev python-dev python3-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
+apt install -y fonts-powerline pkg-config zip g++ zlib1g-dev unzip python tidy cargo astyle clang-format python-pep8 python3-pep8 python-autopep8 yapf libpcre3-dev zlib1g-dev  libbz2-dev zsh libfcgi-dev
+
+apt install -y libpcl-dev
+
+curl https://sh.rustup.rs -sSf | sh
+npm config set registry http://registry.npm.taobao.org/
+pip install yapf
+pip install pylint
+pip install autopep8
+pip install cpplint
+npm install -g js-beautify
+npm install -g typescript-formatter
+npm install -g eslint
+npm install -g prettier
+cargo install rustfmt
+pip install --upgrade pip  
+npm install npm@latest -g
+
+#. install vim
+./configure --enable-luainterp=yes    \
+  --enable-perlinterp=yes     \
+  --enable-pythoninterp=yes   \
+  --enable-python3interp=yes  \
+  --enable-tclinterp=yes     \
+  --enable-rubyinterp=yes    \
+  --enable-cscope        \
+  --enable-terminal       \
+  --enable-multibyte      \
+  --enable-motif-check \
+  --enable-athena-check \
+  --enable-nextaw-check \
+  --enable-carbon-check \
+  --enable-fontset        \
+  --enable-gui=auto       \
+  --with-features=huge \
+
+
+
+echo 'alias vi=vim' >> ~/.bashrc
+
+
+#. install plugin
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vi
+:BundleInstall
+
+cd ~/.vim/bundle/vim-airline
+git clone https://github.com/powerline/fonts ~/.vim/bundle/vim-airline-fonts
+cd ~/.vim/bundle/vim-airline-fonts && ./install.sh
+
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.py --all --system-libclang
+or
+./install.py --clang-completer --go-completer --system-libclang 
+or 
+./install.py --clang-completer --system-libclang 
+
+
+vi /etc/ld.so.conf 
+/usr/lib/clang/8.0.0/lib 
+ldconfig
+
+
+ln -s /usr/lib/clang/8.0.0/bin/clang /usr/bin/clang
+ln -s /usr/lib/clang/8.0.0/bin/clang++ /usr/bin/clang++
+
+
+
+update-alternatives --install /usr/bin/clang clang /usr/bin/clang-8 1 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-8
+
+
+expected hash: [e81a186cd1180ae80c17d67d8d0c101248f8ee032d138cf6f1e95001e733249c]
+        actual hash: [e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855]
+
+
+4. 添加gcc4.8.5
+apt install gcc-4.8 g++-4.8 gcc-4.8-multilib g++-4.8-multilib
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 40
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 60
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 40
+
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 40
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 100
+
+5. ctags
+cd /usr/include/c++/7
+ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q --language-force=c++ -f stdcpp.tags
+
+cd /usr/local/include
+ctags -R --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q --language-force=c++ -f local.tags
+
+cd /usr/include
+ctags -R --exclude=boost --c-kinds=+l+x+p --fields=+lS -I __THROW,__nonnull,__wur -f sys.tags
+
+--c++-kinds=+p --c-kinds=+p --fields=+iaS --extra=+q 
+ctags --c-kinds=+l+x+p --fields=+lS -I __THROW,__nonnull -f sys.tags  -L file_list.txt  
+
+
+6. set up project
+git clone  git@github.com:xiedeacc/util.git
+cd prohttps://github.com/grailbio/bazel-compilation-database
+cp util/.gitignore tools .gen_paths.py .clang-format CPPLINT.cfg .bazelrc bazel-compilation-database  .ycm_extra_conf.py
+
+
+
+
+echo 'alias vi=vim' >> ~/.bashrc
+source ~/.bashrc
+
+sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
+sudo update-alternatives --set editor /usr/local/bin/vim
+sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
+sudo update-alternatives --set vi /usr/local/bin/vim
+
+
+/etc/ssh/sshd_config
+PermitRootLogin yes
+
+
+
+
+
+
+service sshd restart
+tty -s && mesg n || true
+
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=/usr/local/apache-maven-3.6.0/bin:/usr/local/gradle-3.3/bin/:/usr/local/kafka_2.12-2.1.1/bin:/usr/local/flink-1.7.2:/usr/local/GoLand-2019.1.3:/usr/local/idea-IU-191.7479.19:/usr/local/PhpStorm-191.7141.52:/usr/local/WebStorm-191.7479.14:/usr/local/pycharm-2019.1.3
+
+export JAVA_HOME=/usr/local/jdk1.8.0_171
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+
+
+# nginx
+
+./configure \
+    --sbin-path=/usr/local/nginx/nginx \
+    --conf-path=/usr/local/nginx/nginx.conf \
+    --pid-path=/usr/local/nginx/nginx.pid \
+    --with-http_ssl_module \
+    --with-pcre=../pcre-8.43 \
+    --with-zlib=../zlib-1.2.11 
+
+
+
+
+
+重新挂载/usr
+fdisk -l
+fdisk /dev/sdb 
+mkfs.ext4 /dev/sdb1
+init 1
+rm -rf /mid && mkdir /mid 
+mount /dev/sdb1 /mid
+cp -ax /usr/*  /mid
+vi /etc/fstab 
+/dev/sdb1               /usr                    ext4    noatime,acl,user_xattr  1 2
+mkdir /usr/
+cp -ax /mid/*  /usr
+
+
+
+
+# gcc-4.4.6
+export PREFIX=/usr/local
+export THREADS=4
+
+cd texinfo-4.13 && mkdir build && cd build
+../configure --prefix=$PREFIX
+make && make install
+cd ../..
+
+cd gmp-4.3.2
+mkdir build && cd build
+../configure --disable-shared --enable-static --prefix=$PREFIX/gmp
+make -j $THREADS && make check && make install
+cd ../..
+
+cd mpfr-2.4.2 
+mkdir build && cd build
+../configure --with-gmp=$PREFIX/gmp --disable-shared --enable-static --prefix=$PREFIX/mpfr
+make -j $THREADS && make install
+cd ../..
+
+cd mpc-0.8.1
+mkdir build && cd build
+../configure --with-gmp=$PREFIX/gmp --with-mpfr=$PREFIX/mpfr --disable-shared --enable-static --prefix=$PREFIX/mpc
+make -j $THREADS && make install
+cd ../..
+
+cd isl-0.12.2
+mkdir build && cd build
+../configure --with-gmp-prefix=$PREFIX/gmp --disable-shared --enable-static --prefix=$PREFIX/isl
+make -j $THREADS && make install
+cd ../..
+
+cd cloog-0.18.1
+mkdir build && cd build
+../configure --with-gmp-prefix=$PREFIX/gmp --with-isl-prefix=$PREFIX/isl --disable-shared --enable-static --prefix=$PREFIX/cloog
+make -j $THREADS && make install
+cd ../..
+
+cd gcc-4.4.6
+mkdir build && cd build
+export LD_LIBRARY_PATH=$PREFIX/gmp/lib:$PREFIX/mpfr/lib:$PREFIX/mpc/lib:$PREFIX/isl/lib:$PREFIX/cloog/lib
+export C_INCLUDE_PATH=$PREFIX/gmp/include:$PREFIX/mpfr/include:$PREFIX/mpc/include:$PREFIX/isl/include:$PREFIX/cloog/include
+export CPLUS_INCLUDE_PATH=$PREFIX/gmp/include:$PREFIX/mpfr/include:$PREFIX/mpc/include:$PREFIX/isl/include:$PREFIX/cloog/include
+../configure --with-gmp=$PREFIX/gmp --with-mpfr=$PREFIX/mpfr --with-mpc=$PREFIX/mpc --with-isl=$PREFIX/isl --with-cloog=$PREFIX/cloog --disable-shared --enable-static --disable-multilib --prefix=$PREFIX/  --enable-languages=c,c++ -fPIC
+make -j $THREADS bootstrap && make install
+
